@@ -1,0 +1,12 @@
+
+<antHelper>
+ <antHome>F:\tools\apache-ant-1.6.2</antHome>
+ <locationTableModel>
+
+<row>
+ <enable>true</enable>
+<location>F:\DEV_ENV\new_Palomino\Platform\src\java\com.apldbio.sds.experiment.genotyping.ui</location>
+</row>
+
+</locationTableModel>
+</antHelper>
