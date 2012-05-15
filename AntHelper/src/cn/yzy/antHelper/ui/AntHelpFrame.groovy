@@ -23,6 +23,7 @@ public class AntHelpFrame extends AntHelpFrameView
 	String KEY_LOCATION_ID='id'
 	String KEY_LOCATION_ENABLE='enable'
 	String KEY_LOCATION_PATH='location'
+	String lastPath=null
 
 	def AntHelpFrame(File propertyFile)
 	{
@@ -107,10 +108,14 @@ public class AntHelpFrame extends AntHelpFrameView
 		{
 			def fileChooser=new JFileChooser()
 			fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY)
+			if(lastPath!=null) {
+				fileChooser.setCurrentDirectory(new File(lastPath))
+			}
 			def result=fileChooser.showOpenDialog(this)
 			if(result==JFileChooser.APPROVE_OPTION)
 			{
 				mDataModel.location=fileChooser.getSelectedFile().getAbsolutePath()
+				lastPath=mDataModel.location
 				updateUI()
 			}
 		}
